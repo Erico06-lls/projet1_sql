@@ -1,75 +1,170 @@
-# Cahier de vacances Machine Learnia
+# 📚 Cahier de vacances Machine Learnia - Mes Solutions
 
-Bienvenue dans le cahier de vacances Machine Learnia !
+Bienvenue dans mon dépôt personnel regroupant mes solutions et expérimentations réalisées dans le cadre du cahier de vacances proposé par [Machine Learnia](https://github.com/MachineLearnia/Cahier-Vacances-2026).
 
-Chaque dimanche de l'été, un mini projet est publié. L'objectif est de pratiquer de façon concrète et progressive, les bases de l'analyse de données, le ML classique en passant par les RAG, et les graphes.
+Chaque semaine, un nouveau mini-projet est publié avec pour objectif de pratiquer progressivement différents domaines de la Data Science et de l'Intelligence Artificielle : analyse de données, Machine Learning classique, RAG, graphes, etc.
 
-## Structure du repo
+Ce dépôt me permet de :
+- 📝 conserver mes notebooks complétés ;
+- 💻 centraliser mon code et mes expérimentations ;
+- 📊 documenter mes résultats et mes analyses ;
+- 📈 suivre ma progression au fil des projets.
 
-Chaque projet a son propre dossier, qui regroupe toutes ses ressources (notebook, données, images) :
+---
+
+# 📂 Structure du dépôt
+
+Chaque projet possède son propre dossier contenant les ressources associées :
+
+- 📓 Notebook complété avec mes solutions ;
+- 📁 Données utilisées pour les expérimentations ;
+- 📝 Un fichier `README.md` présentant le projet et mes résultats ;
+- 🖼️ Les éventuelles images ou visualisations générées.
+
+Structure générale :
 
 ```
 cahier-de-vacances/
 ├── Projet_01/
-│   └── projet_01.ipynb
+│   ├── projet_01.ipynb
+│   └── README.md
+│
 ├── Projet_02/
 │   └── ...
+│
 ├── pyproject.toml
 └── README.md
 ```
 
-## Faire le cahier de vacances depuis le début
+---
 
-### Étape 1 : cloner le projet
+# ⚙️ Configuration de l'environnement
 
-La première chose à faire est de récupérer le projet sur votre ordinateur. Ouvrez un terminal, placez-vous dans le dossier de votre choix et tapez :
+Afin de garder un environnement propre et reproductible pour mes notebooks, ce dépôt utilise un environnement Python isolé géré avec **uv**.
 
-```shell
-git clone https://github.com/MachineLearnia/Cahier-Vacances-2026.git
-```
+`uv` permet de gérer automatiquement :
+- la version de Python utilisée ;
+- l'environnement virtuel ;
+- les dépendances nécessaires aux différents projets.
 
-Un dossier `Cahier-Vacances-2026` apparaît, c'est votre copie locale du projet. C'est aussi grâce à git que vous récupérerez les nouveaux projets chaque semaine (on en reparle plus bas).
+---
 
-### Étape 2 : installer uv
+## 📋 Prérequis
 
-Pour l'environnement python, vous pouvez utiliser celui que vous préférez si vous êtes à l'aise avec, mais sinon, nous utiliserons le gestionnaire [`uv`](https://docs.astral.sh/uv/) qui est un outil récent et très populaire. Pour le télécharger, cela dépend de votre système d'exploitation. Si vous êtes sur Linux, MacOS ou WSL ouvrez votre terminal et tapez :
+Avant d'utiliser ce dépôt, il est nécessaire d'avoir installé :
+
+- 🐙 **Git**
+- 🐍 **Python** (si nécessaire)
+- 💻 **VS Code** avec les extensions :
+  - 🐍 Python
+  - 📓 Jupyter
+
+---
+
+# 🚀 Installation de uv
+
+## 🐧 Linux / macOS / WSL
 
 ```shell
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Si vous êtes sur Windows ouvrez le powershell et tapez :
+## 🪟 Windows (PowerShell)
 
-```shell
+```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-### Étape 3 : créer l'environnement
+Vérification de l'installation :
 
-Le repo contient déjà tout ce qu'il faut pour construire l'environnement : le fichier `pyproject.toml` (qui décrit le projet et ses dépendances) et le fichier `.python-version` (qui fixe la version de python, ici la 3.13.2). Autrement dit, pas besoin d'initialiser quoi que ce soit, il suffit de demander à `uv` de tout construire.
+```shell
+uv --version
+```
 
-Ouvrez un terminal à la racine du dossier `Cahier-Vacances-2026` (dans vscode, clique droit sur le dossier puis "open in integrated terminal") et tapez :
+---
+
+# 🏗️ Création de l'environnement virtuel
+
+Depuis la racine du dépôt :
 
 ```shell
 uv sync
 ```
 
-`uv` va télécharger la bonne version de python si elle n'est pas déjà sur votre machine, puis créer un dossier `.venv`, c'est notre environnement ! Certains projets vous demanderont d'ajouter une librairie avec `uv add`, ce sera toujours indiqué dans le notebook.
+Cette commande permet de :
 
-### Étape 4 : ouvrir les notebooks et travailler
+✅ Installer la version de Python configurée dans le projet  
+✅ Créer l'environnement virtuel `.venv`  
+✅ Installer toutes les dépendances nécessaires  
+✅ Préparer l'environnement pour exécuter les notebooks  
 
-Ouvrez le dossier dans votre éditeur (par exemple vscode avec les extensions Python et Jupyter), puis ouvrez le notebook du projet en cours. En haut à droite, cliquez sur "Select Kernel" et choisissez l'environnement du projet (celui qui mentionne `.venv`).
+---
 
-Dans les notebooks il y a des blocs balisés `### START CODE HERE ###` / `### END CODE HERE ###`, ce sont les blocs à remplir ! Il faut compléter entre les deux lignes. Une fois fini il suffit de lancer la cellule de code, puis de voir si les tests passent.
+# 📓 Utilisation avec VS Code
 
-## Récupérer les projets des semaines suivantes
+Pour exécuter les notebooks :
 
-Un nouveau projet est publié chaque dimanche de l'été. Pour le récupérer, ouvrez un terminal à la racine du dossier et tapez :
+1. Ouvrir le dépôt dans VS Code.
+2. Ouvrir le notebook du projet souhaité (`.ipynb`).
+3. Sélectionner **Select Kernel**.
+4. Choisir l'environnement Python situé dans :
+
+```
+.venv
+```
+
+L'environnement est maintenant prêt pour lancer les cellules de code.
+
+---
+
+# 📦 Ajouter une dépendance
+
+Lorsqu'un projet nécessite une nouvelle bibliothèque Python :
+
+```shell
+uv add nom_de_la_bibliothèque
+```
+
+Exemple :
+
+```shell
+uv add pandas
+```
+
+La dépendance sera automatiquement enregistrée dans :
+
+```
+pyproject.toml
+```
+
+---
+
+# 🔄 Synchroniser l'environnement
+
+Après une modification des dépendances :
+
+```shell
+uv sync
+```
+
+Cette commande permet de remettre l'environnement en cohérence avec la configuration du projet.
+
+---
+
+# 🔃 Récupérer les nouveaux projets
+
+Le cahier de vacances étant mis à jour régulièrement, les nouveaux projets peuvent être récupérés avec :
 
 ```shell
 git pull
 ```
 
-Le nouveau dossier `Projet_XX` apparaît, et vous pouvez vous lancer. Les projets déjà publiés ne sont jamais modifiés, donc votre travail dans les notebooks précédents ne sera pas écrasé et vous ne devriez pas rencontrer de conflit.
+Les nouveaux dossiers seront ajoutés sans modifier les solutions déjà réalisées.
 
-*Bonne pratique, et bon été !*
+---
+
+# 🚀 Prêt à expérimenter !
+
+L'environnement est maintenant configuré pour continuer mes expérimentations autour de la Data Science et de l'Intelligence Artificielle.
+
+Bon apprentissage et bonnes explorations 🤖📊
